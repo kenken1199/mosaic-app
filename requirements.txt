@@ -1,0 +1,10 @@
+-i https://pypi.org/simple
+click==7.1.2
+flask==1.1.2
+itsdangerous==1.1.0
+jinja2==2.11.2
+markupsafe==1.1.1
+numpy==1.19.1
+opencv-python==4.4.0.40
+pillow==7.2.0
+werkzeug==1.0.1
