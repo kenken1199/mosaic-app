@@ -17,7 +17,7 @@ def mosaic(img, rect, size):
     return img2
 
 def mosaic_edit(img_array , row_picture_file):
-    cascade_file = "/Users/kenta/Documents/PG/flask-mosaic/project/static/haarcascade_frontalface_alt.xml"
+    cascade_file = "/Users/kenta/code/mosaic-app/project/static/haarcascade_frontalface_alt.xml"
     cascade = cv2.CascadeClassifier(cascade_file)
     picture_fn = row_picture_file.filename
     picture_path = os.path.join(current_app.root_path, 'static/after_image', picture_fn)
@@ -29,10 +29,10 @@ def mosaic_edit(img_array , row_picture_file):
     if len(face_list) == 0:
         print("失敗")
         quit()
-        
+
     for (x,y,w,h) in face_list:
         img = mosaic(img, (x, y, x+w, y+h), 10)
-    
+
     dst = cv2.resize(img, (600, 600))
     cv2.imwrite(picture_path, dst)
 
